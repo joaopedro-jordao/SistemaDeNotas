@@ -11,6 +11,7 @@ exports.config = {
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     specs: [
         '../../features/*.feature'
+        //para executar os testes da sua classe comente a linha de cima e use esse padrão '../../features/email.feature'
     ],
     onPrepare: () => {
         protractor_1.browser.ignoreSynchronization = true;

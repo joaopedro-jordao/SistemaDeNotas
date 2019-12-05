@@ -52,7 +52,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     })
 
     Then(/^será enviado um e-mail a pedro em phcl@cin.ufpe.br com a mensagem de que ele possui uma nova meta cadastrada$/, async () => {
-        await request.get(base_url + "email/phcl@cin.ufpe.br/final")
+        await request.get(base_url + "email/phcl@cin.ufpe.br/meta")
         .then(body => 
             expect(body.includes('"Email enviado"')).to.equal(true));
     })

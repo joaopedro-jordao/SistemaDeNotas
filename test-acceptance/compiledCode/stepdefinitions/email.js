@@ -44,7 +44,7 @@ cucumber_1.defineSupportCode(function ({ Given, When, Then }) {
             .then(body => expect(body.includes('"Email enviado"')).to.equal(true));
     }));
     Then(/^será enviado um e-mail a pedro em phcl@cin.ufpe.br com a mensagem de que ele possui uma nova meta cadastrada$/, () => __awaiter(this, void 0, void 0, function* () {
-        yield request.get(base_url + "email/phcl@cin.ufpe.br/final")
+        yield request.get(base_url + "email/phcl@cin.ufpe.br/meta")
             .then(body => expect(body.includes('"Email enviado"')).to.equal(true));
     }));
     Then(/^será enviado um e-mail a pedro em phcl@cin.ufpe.br com a mensagem de que ele possui uma nova média disponível$/, () => __awaiter(this, void 0, void 0, function* () {
