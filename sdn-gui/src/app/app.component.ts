@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 
+import { Turma } from '../../../common/turma';
+import { Matricula } from '../../../common/matricula';
+import { TurmaService } from './turma.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './html/app.component.html',
@@ -8,16 +12,11 @@ import { NgModule } from '@angular/core';
 })
 
 export class AppComponent {
-  turma: Turma = {nome: "", materia: "", matriculas: [], metas: []}
-}
+  turma: Turma = {nome: "", materia: "", matriculas: [], metas: []};
+  turmaService = new TurmaService();
 
-export class Turma{
-  nome: string;
-  materia: string;
-  matriculas: Matricula[];
-  metas: string[];
-}
-
-export class Matricula{
-  
+  gravar(a: Turma): void{
+    this.turmaService.gravar(a);
+    this.turma = {nome: "", materia: "", matriculas: [], metas: []}
+  }
 }
