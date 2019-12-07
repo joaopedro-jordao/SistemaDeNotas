@@ -5,13 +5,17 @@ import {FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TurmasMainComponent } from './turmas-main/turmas-main.component';
+import { TurmasCadastroComponent } from './turmas-cadastro/turmas-cadastro.component';
 
 const appRoutes : Routes = [
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TurmasMainComponent,
+    TurmasCadastroComponent
   ],
   imports: [
     BrowserModule,
