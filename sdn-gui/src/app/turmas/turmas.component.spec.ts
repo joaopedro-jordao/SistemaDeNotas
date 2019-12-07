@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TurmasCadastroComponent } from './turmas-cadastro.component';
+import { TurmasComponent } from './turmas.component';
 
-describe('TurmasCadastroComponent', () => {
-  let component: TurmasCadastroComponent;
-  let fixture: ComponentFixture<TurmasCadastroComponent>;
+describe('TurmasComponent', () => {
+  let component: TurmasComponent;
+  let fixture: ComponentFixture<TurmasComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TurmasCadastroComponent ]
+      declarations: [ TurmasComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TurmasCadastroComponent);
+    fixture = TestBed.createComponent(TurmasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

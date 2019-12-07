@@ -5,8 +5,8 @@ import {FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TurmasMainComponent } from './turmas-main/turmas-main.component';
-import { TurmasCadastroComponent } from './turmas-cadastro/turmas-cadastro.component';
+import { TurmasComponent } from './turmas/turmas.component';
+import { EditarComponent } from './turmas/editar/editar.component';
 
 const appRoutes : Routes = [
 ];
@@ -14,8 +14,8 @@ const appRoutes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TurmasMainComponent,
-    TurmasCadastroComponent
+    TurmasComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,6 @@
     <li *ngFor="let a of turmas">
             <span>{{a.nome}}</span>,
             <span>{{a.materia}}</span>
-
+            <button (click)="editar(a)">Editar</button>
     </li>
 </ul>
