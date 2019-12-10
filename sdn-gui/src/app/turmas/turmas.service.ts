@@ -1,5 +1,7 @@
 import { Turma } from '../../../../common/turma';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class TurmaService {
     turmas: Turma[] = [];
     gravar(turma: Turma): Turma {

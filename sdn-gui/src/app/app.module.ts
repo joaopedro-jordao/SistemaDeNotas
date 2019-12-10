@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TurmasComponent } from './turmas/turmas.component';
 import { EditarComponent } from './turmas/editar/editar.component';
+import { TurmaService } from './turmas/turmas.service';
 
 const appRoutes : Routes = [
 ];
@@ -25,7 +26,7 @@ const appRoutes : Routes = [
     ),
     FormsModule
   ],
-  providers: [],
+  providers: [TurmaService],
   bootstrap: [AppComponent]
 })
 export class AppModule{ }

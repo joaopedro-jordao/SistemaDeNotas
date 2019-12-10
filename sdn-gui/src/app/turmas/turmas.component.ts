@@ -10,12 +10,14 @@ import { TurmaService } from './turmas.service';
 })
 export class TurmasComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  constructor(
+    private _router: Router,
+    private turmaService: TurmaService
+    ) { }
 
   ngOnInit() {
   }
   turma: Turma = {nome: "", materia: "", matriculas: [], metas: []};
-  turmaService = new TurmaService;
   turmas: Turma[] = [];
   turmaduplicada: boolean = false;
 
