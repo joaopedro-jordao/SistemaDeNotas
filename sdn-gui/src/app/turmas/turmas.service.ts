@@ -12,4 +12,4 @@ export class TurmaService {
       }
       return result;
     }
-  }
+}

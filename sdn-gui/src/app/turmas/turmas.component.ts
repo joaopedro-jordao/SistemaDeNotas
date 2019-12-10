@@ -39,4 +39,11 @@ export class TurmasComponent implements OnInit {
     
     this._router.navigate(['Turmas/Editar', {nome: turma.nome, materia: turma.materia}])
   }
+
+  remover(a: Turma){
+    let index = this.turmas.indexOf(a);
+    this.turmas.splice(index, 1);
+    alert("Turma removida");
+  }    
+
 }
