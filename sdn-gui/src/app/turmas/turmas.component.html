@@ -1,23 +1,28 @@
-<h1>Sistema de Notas</h1>
+<html (mousemove)="onMove()">
+    <h1>Sistema de Notas</h1>
 
-<h2>Turmas</h2>
+    <h2>Turmas</h2>
 
-<table>
-    <tr>
-        <td><label>Nome</label></td>
-        <td><input [(ngModel)]="turma.nome"></td>
-    </tr>
-    <tr>
-        <td><label>Materia</label></td>
-        <td><input [(ngModel)]="turma.materia"></td>
-        <td><button (click)="gravar(turma)">Criar nova turma</button></td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <td><label>Nome</label></td>
+            <td><input [(ngModel)]="turma.nome"></td>
+            <td *ngIf="turmaduplicada">
+                Já existe uma turma com esse nome.
+            </td>
+        </tr>
+        <tr>
+            <td><label>Materia</label></td>
+            <td><input [(ngModel)]="turma.materia"></td>
+            <td><button (click)="gravar(turma)">Criar nova turma</button></td>
+        </tr>
+    </table>
 
-<ul>
-    <li *ngFor="let a of turmas">
-            <span>{{a.nome}}</span>,
-            <span>{{a.materia}}</span>
-            <button (click)="editar(a)">Editar</button>
-    </li>
-</ul>
+    <ul>
+        <li *ngFor="let a of turmas">
+                <span>{{a.nome}}</span>,
+                <span>{{a.materia}}</span>
+                <button (click)="editar(a)">Editar</button>
+        </li>
+    </ul>
+</html>

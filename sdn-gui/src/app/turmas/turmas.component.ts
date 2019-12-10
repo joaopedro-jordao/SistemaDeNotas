@@ -17,14 +17,19 @@ export class TurmasComponent implements OnInit {
   turma: Turma = {nome: "", materia: "", matriculas: [], metas: []};
   turmaService = new TurmaService;
   turmas: Turma[] = [];
+  turmaduplicada: boolean = false;
 
   gravar(a: Turma): void{
     if(this.turmaService.gravar(a)){
     this.turmas.push(a);
     this.turma = {nome: "", materia: "", matriculas: [], metas: []};
     } else {
-      this.turma.nome = "";
+      this.turmaduplicada = true;
     }
+  }
+
+  onMove(): void{
+    this.turmaduplicada = false;
   }
 
   editar(turma: Turma){
