@@ -47,7 +47,4 @@ export class TurmasComponent implements OnInit {
     alert("Turma removida");
   }    
 
-  atualizarTurma(turma: Turma): void {
-    this.turmaService.atualizar(turma);
- }
 }

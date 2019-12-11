@@ -18,16 +18,5 @@
         </tr>
     </table>
 
-    <table class="turmas">
-        <tr *ngIf="turmas.length > 0">
-            <th>Nome</th>
-            <th>Materia</th>
-            <th>Alunos</th>
-        </tr>
-        <tr *ngFor="let a of turmas">
-            <td>{{a.nome}}</td>
-            <td>{{a.materia}}</td>
-            <td><input [(ngModel)]="a.matriculas['aluno']" (change)="atualizarTurma(a)"></td>
-        </tr>
-    </table>
+    <metas [turmas]="turmas"></metas>
 </html>
