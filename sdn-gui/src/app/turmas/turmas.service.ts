@@ -29,4 +29,12 @@ export class TurmaService {
             }
         }
       }
+
+    getTurmas(): Turma[] {
+        var result: Turma[] = [];
+        for (let a of this.turmas) {
+            result.push(a.clone());
+        }
+        return result;
+    }
 }

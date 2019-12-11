@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { TurmasComponent } from './turmas/turmas.component';
 import { EditarComponent } from './turmas/editar/editar.component';
 import { TurmaService } from './turmas/turmas.service';
-import { MatriculasComponent } from './matriculas.component';
+//import { MatriculasComponent } from './matriculas.component';
 
 const appRoutes : Routes = [
 ];
@@ -17,8 +17,7 @@ const appRoutes : Routes = [
   declarations: [
     AppComponent,
     TurmasComponent,
-    EditarComponent,
-    MatriculasComponent
+    EditarComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +25,13 @@ const appRoutes : Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'turmas',
+        component: TurmasComponent
+      }
+    ])
   ],
   providers: [TurmaService],
   bootstrap: [AppComponent]
