@@ -19,7 +19,9 @@ export class MatriculasComponent implements OnInit {
    }
 
    ngOnInit(): void {
-     this.turmas = this.turmaService.getTurmas();
+    this.turmaService.getTurmas()
+    .then(turmas => this.turmas = turmas)
+    .catch(erro => alert(erro));
   }
 
 }

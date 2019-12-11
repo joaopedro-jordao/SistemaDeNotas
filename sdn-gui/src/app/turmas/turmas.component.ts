@@ -60,4 +60,3 @@ export class TurmasComponent implements OnInit {
          .catch(erro => alert(erro));
    }
   }
-}
