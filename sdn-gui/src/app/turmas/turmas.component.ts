@@ -17,14 +17,14 @@ export class TurmasComponent implements OnInit {
 
   ngOnInit() {
   }
-  turma: Turma = {nome: "", materia: "", matriculas: []};
+  turma: Turma = new Turma();
   turmas: Turma[] = [];
   turmaduplicada: boolean = false;
 
-  gravar(a: Turma): void{
-    if(this.turmaService.gravar(a)){
+  criar(a: Turma): void{
+    if(this.turmaService.criar(a)){
     this.turmas.push(a);
-    this.turma = {nome: "", materia: "", matriculas: []};
+    this.turma = new Turma();
     } else {
       this.turmaduplicada = true;
     }
@@ -47,4 +47,7 @@ export class TurmasComponent implements OnInit {
     alert("Turma removida");
   }    
 
+  atualizarTurma(turma: Turma): void {
+    this.turmaService.atualizar(turma);
+ }
 }

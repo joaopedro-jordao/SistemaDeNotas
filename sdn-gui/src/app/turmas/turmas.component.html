@@ -14,16 +14,20 @@
         <tr>
             <td><label>Materia</label></td>
             <td><input [(ngModel)]="turma.materia"></td>
-            <td><button (click)="gravar(turma)">Criar nova turma</button></td>
+            <td><button (click)="criar(turma)">Criar nova turma</button></td>
         </tr>
     </table>
 
-    <ul>
-        <li *ngFor="let a of turmas">
-                <span>{{a.nome}}</span>,
-                <span>{{a.materia}}</span>
-                <button (click)="editar(a)">Editar</button>
-                <button (click)="remover(a)">Remover</button>
-        </li>
-    </ul>
+    <table class="turmas">
+        <tr *ngIf="turmas.length > 0">
+            <th>Nome</th>
+            <th>Materia</th>
+            <th>Alunos</th>
+        </tr>
+        <tr *ngFor="let a of turmas">
+            <td>{{a.nome}}</td>
+            <td>{{a.materia}}</td>
+            <td><input [(ngModel)]="a.matriculas['aluno']" (change)="atualizarTurma(a)"></td>
+        </tr>
+    </table>
 </html>

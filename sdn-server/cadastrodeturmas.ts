@@ -21,4 +21,13 @@ export class CadastroDeTurmas{
     getTurmas(): Turma[]{
         return this.turmas;
     }
+
+    remover(turma: Turma): void {
+        let index = this.turmas.indexOf(turma);
+        this.turmas.splice(index, 1);
+        alert("Turma removida");
+    
+    }
+
+    
 }

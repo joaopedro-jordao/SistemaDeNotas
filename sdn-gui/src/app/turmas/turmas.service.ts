@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TurmaService {
     turmas: Turma[] = [];
-    gravar(turma: Turma): Turma {
+    criar(turma: Turma): Turma {
+        turma = turma.novaTurma();
       var result = null;
       if (!this.turmas.find(a => a.nome == turma.nome)) {
         this.turmas.push(turma);
@@ -19,4 +20,13 @@ export class TurmaService {
             alert("Turma removida");
         
     }
+
+    atualizar(turma:Turma): void {
+        turma = turma.clone();
+        for (let a of this.turmas) {
+            if (a.nome == turma.nome) {
+               a.matriculas = turma.matriculas;
+            }
+        }
+      }
 }
