@@ -1,0 +1,12 @@
+<table>
+    <tr>
+       <th>Nome</th>
+       <th>Materia</th>
+       <th>Matrícula</th>
+    </tr>
+    <tr *ngFor="let a of turmas">
+       <td>{{a.nome}}</td>
+       <td>{{a.cpf}}</td>
+       <td class="matricula"><input [(ngModel)]="a.matricula['aluno']" (change)="atualizarTurma(a)"></td>
+    </tr>
+    </table>

@@ -10,11 +10,20 @@ var server = express();
 
 var turmasB: CadastroDeTurmas = new CadastroDeTurmas();
 
+
+var allowCrossDomain = function(req: any, res: any, next: any) {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+}
+server.use(allowCrossDomain);
+
 server.use(bodyParser.json());
 
 server.get('/turmas', function(req, res){
-  var turma: string = JSON.stringify(turmasB.getTurmas());
-  res.send(turma);
+  console.log('GET /turmas: ' + req)
+  res.send(JSON.stringify(turmasB.getTurmas()));
 })
 
 server.post('/turma', function(req: express.Request, res: express.Response) {

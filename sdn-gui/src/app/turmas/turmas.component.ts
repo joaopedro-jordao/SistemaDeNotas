@@ -15,19 +15,22 @@ export class TurmasComponent implements OnInit {
     private turmaService: TurmaService
     ) { }
 
-  ngOnInit() {
-  }
   turma: Turma = new Turma();
   turmas: Turma[] = [];
   turmaduplicada: boolean = false;
 
   criar(a: Turma): void{
-    if(this.turmaService.criar(a)){
-    this.turmas.push(a);
-    this.turma = new Turma();
-    } else {
-      this.turmaduplicada = true;
-    }
+    this.turmaService.criar(a)
+        .then(ab => {
+           if (ab) {
+              this.turmas.push(ab);
+              this.turma = new Turma();
+           } else {
+              this.turmaduplicada = true;
+           }
+        })
+        .catch(erro => alert(erro));
+
   }
 
   onMove(): void{
@@ -41,10 +44,20 @@ export class TurmasComponent implements OnInit {
   }
 
   remover(a: Turma){
-    this.turmaService.remover(a);
-    let index = this.turmas.indexOf(a);
+    this.turmaService.remover(a)
+    .then(ac => {
+    this.turmaService.remover(ac);
+    let index = this.turmas.indexOf(ac);
     this.turmas.splice(index, 1);
+    }
+    )
     alert("Turma removida");
   }    
 
+  ngOnInit(): void{
+    this.turmaService.getTurmas()
+         .then(as => this.turmas = as)
+         .catch(erro => alert(erro));
+   }
+  }
 }

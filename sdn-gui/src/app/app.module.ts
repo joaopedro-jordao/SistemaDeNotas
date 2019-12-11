@@ -6,8 +6,9 @@ import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TurmasComponent } from './turmas/turmas.component';
-import { EditarComponent } from './turmas/editar/editar.component';
 import { TurmaService } from './turmas/turmas.service';
+import { MatriculasComponent } from './matriculas/matriculas.component';
+import { HttpModule } from '@angular/http';
 //import { MatriculasComponent } from './matriculas.component';
 
 const appRoutes : Routes = [
@@ -17,11 +18,12 @@ const appRoutes : Routes = [
   declarations: [
     AppComponent,
     TurmasComponent,
-    EditarComponent
+    MatriculasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule ,
+    HttpModule,
     RouterModule.forRoot(
       appRoutes
     ),
@@ -30,6 +32,10 @@ const appRoutes : Routes = [
       {
         path: 'turmas',
         component: TurmasComponent
+      },
+      {
+        path: 'matriculas',
+        component: MatriculasComponent
       }
     ])
   ],

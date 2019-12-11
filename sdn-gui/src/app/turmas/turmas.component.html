@@ -18,5 +18,14 @@
         </tr>
     </table>
 
-    <metas [turmas]="turmas"></metas>
+    <table>
+        <tr *ngIf="turmas.length > 0">
+           <th>Nome</th>
+           <th>Matéria</th>
+        </tr>
+        <tr *ngFor="let a of turmas">
+           <td>{{a.nome}}</td>
+           <td>{{a.materia}}</td>
+        </tr>
+        </table>
 </html>
