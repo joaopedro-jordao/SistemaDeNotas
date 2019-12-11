@@ -4,5 +4,8 @@ export class Turma {
     nome: String;
     materia: String;
     matriculas: Matricula[];
-    metas: String[];
+
+    pushMatricula(matricula: Matricula){
+        this.matriculas.push(matricula);
+    }
 }

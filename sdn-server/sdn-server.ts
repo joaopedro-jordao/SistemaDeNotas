@@ -1,11 +1,31 @@
 import express = require('express');
-import { send } from './email';
+import bodyParser = require("body-parser");
 
+import { Turma } from '../common/turma';
+import { send } from './email';
+import { CadastroDeTurmas } from './cadastrodeturmas';
 
 
 var server = express();
 
+var turmasB: CadastroDeTurmas = new CadastroDeTurmas();
 
+server.use(bodyParser.json());
+
+server.get('/turmas', function(req, res){
+  var turma: string = JSON.stringify(turmasB.getTurmas());
+  res.send(turma);
+})
+
+server.post('/turma', function(req: express.Request, res: express.Response) {
+  var turma: Turma = <Turma> req.body;
+  turma = turmasB.criar(turma);
+  if (turma) {
+    res.send({"success":"A turma foi criada com sucesso"});
+  } else {
+    res.send({"failure":"A turma não pode ser cadastrada"});
+  }
+})
 
 server.listen(3000, function () {
   console.log('Example app listening on port 3000!');

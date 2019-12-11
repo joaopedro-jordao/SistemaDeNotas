@@ -12,4 +12,11 @@ export class TurmaService {
       }
       return result;
     }
+
+    remover(turma: Turma): void {
+            let index = this.turmas.indexOf(turma);
+            this.turmas.splice(index, 1);
+            alert("Turma removida");
+        
+    }
 }
