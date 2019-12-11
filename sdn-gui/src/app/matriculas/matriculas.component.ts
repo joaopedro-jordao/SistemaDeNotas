@@ -5,9 +5,9 @@ import { Turma } from '../../../../common/turma';
 import { TurmaService } from '../turmas/turmas.service';
 
 @Component({
-  selector: 'metas',
-  templateUrl: './metas.component.html',
-  styleUrls: ['./metas.component.css']
+  selector: 'matriculas',
+  templateUrl: './matriculas.component.html',
+  styleUrls: ['./matriculas.component.css']
 })
 export class MatriculasComponent implements OnInit {
    constructor(private turmaService: TurmaService) {}

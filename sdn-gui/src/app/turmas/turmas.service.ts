@@ -12,7 +12,7 @@ export class TurmaService {
     constructor(private http: Http) { }
     
     criar(turma: Turma): Promise<Turma> {
-        return this.http.post(this.taURL + "/turma",JSON.stringify(turma), {headers: this.headers})
+        return this.http.post(this.taURL + "/turma",turma, {headers: this.headers})
            .toPromise()
            .then(res => {
               if (res.json().success) {return turma;} else {return null;}
